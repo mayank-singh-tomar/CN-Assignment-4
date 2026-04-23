@@ -266,14 +266,13 @@ def listen_for_updates():
             update_logic(rid, routes)
 
 
-# -------------------- MAIN --------------------
 
 if __name__ == "__main__":
     print(f"[START] Router started with IP {MY_IP}")
 
     enable_router_forwarding()
     refresh_direct_routes()
-    add_fake_subnet()   # 🔥 KEY FIX
+    add_fake_subnet()   
     install_routes_from_table()
 
     threading.Thread(target=broadcast_updates, daemon=True).start()
